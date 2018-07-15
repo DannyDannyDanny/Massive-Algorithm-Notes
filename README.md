@@ -9,7 +9,12 @@ $HFA(l, α)$: return the highest ancestor $a$ of $l$ such that $T(a)$ is $α$-fr
 Give a linear-space data structure for $T$ that supports fast $HFA$ queries. Ignore the preprocessing time.
 
 #### Solution in $O(\log(n))$ time
-Starting at leaf $$l$$, 
+No additional changes are made to the original tree. To perform $HFA(\alpha,l)$
+
+
+Starting at leaf $$l$$, traverse the parents and if all children are \alpha-free continue to the grandparents, otherwise return the leaf. Continue recursively checking greater-grandparents and all greater-grandchildren until the the subtree at some grandparent is no longer \alpha-free.
+
+Ideas for alternative solution: Find most closely related alpha node and do LCA. Return LCA nodes child on $l$'s side.
 
 
 ### Question 3
@@ -29,9 +34,9 @@ We want to compute the reverse string $S^R$ of $S$.
 $B$ is I/O block size and $n$ is Length of string $S$
 
 * Divide $S$ into substrings - such that any two substrings can be loaded in one I/O.
-* Read the first and last substrings into memory and reverse.
+* Read the first and last substrings into memory and reverse each substring.
 * Write the reversed substrings each to the others original position.
-* Working inwards, repeat the process with the next two $B/2$ long substrings from either end.
+* Working inwards, repeat the process for each pair of substrings until S has been reversed.
 
 The whole process takes $O(n/B)$ I/Os.
 
@@ -39,9 +44,9 @@ The whole process takes $O(n/B)$ I/Os.
 
 #### Algorithm to reverse S in the cache oblivious model.
 
-* Half the string into substrings recursively until any two substrings fit into memory.
-* Load first and last substrings into memory and reverse each.
-* Write each reversed substring in place of the others original position.
+* Half the string into substrings recursively until any two substrings fit into **memory**.
+* Read the first and last substrings into memory and reverse each substring.
+* Write the reversed substrings each to the others original position.
+* Working inwards, repeat the process for each pair of substrings until S has been reversed.
 
-
-> wait this is exactly the same....
+The algorithms runs in $O(n/M)$ I/Os
