@@ -1,6 +1,17 @@
 
 ### Question 1
-### Question 2
+### Question 2 The Highest α-Free Ancestor Problem
+
+Let $T$ be a rooted tree with $n$ nodes. Each leaf in $T$ is assigned a label from a set of colors $C$. Given a node $v ∈ T$, the subtree rooted at $v$, denoted $T(v)$, is the tree consisting of $v$ and all descendants of $v$. A subtree $T(v)$ is $α$-free if it does not contain a leaf with label $α$. We are interested in efficient data structures for $T$ that support the following query. Let $l$ be a leaf in $T$ and $α$ a color in $C$.
+
+$HFA(l, α)$: return the highest ancestor $a$ of $l$ such that $T(a)$ is $α$-free.
+
+Give a linear-space data structure for $T$ that supports fast $HFA$ queries. Ignore the preprocessing time.
+
+#### Solution in $O(\log(n))$ time
+Starting at leaf $$l$$, 
+
+
 ### Question 3
 ### Question 4
 ### Question 5
