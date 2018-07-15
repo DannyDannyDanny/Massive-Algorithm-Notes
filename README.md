@@ -1,5 +1,13 @@
+Notes on Algorithms for Massive Data sets and Solutions for Exam Preparation Questions.
 
-### Question 1
+[TOC]
+
+## Notes
+> coming soon
+
+## Solutions
+
+### Question 1 The Subsequence Problem
 ### Question 2 The Highest α-Free Ancestor Problem
 
 Let $T$ be a rooted tree with $n$ nodes. Each leaf in $T$ is assigned a label from a set of colors $C$. Given a node $v ∈ T$, the subtree rooted at $v$, denoted $T(v)$, is the tree consisting of $v$ and all descendants of $v$. A subtree $T(v)$ is $α$-free if it does not contain a leaf with label $α$. We are interested in efficient data structures for $T$ that support the following query. Let $l$ be a leaf in $T$ and $α$ a color in $C$.
@@ -12,7 +20,7 @@ Give a linear-space data structure for $T$ that supports fast $HFA$ queries. Ign
 No additional changes are made to the original tree. To perform $HFA(\alpha,l)$
 
 
-Starting at leaf $$l$$, traverse the parents and if all children are \alpha-free continue to the grandparents, otherwise return the leaf. Continue recursively checking greater-grandparents and all greater-grandchildren until the the subtree at some grandparent is no longer \alpha-free.
+Starting at leaf l, traverse the parents and if all children are \alpha-free continue to the grandparents, otherwise return the leaf. Continue recursively checking greater-grandparents and all greater-grandchildren until the the subtree at some grandparent is no longer \alpha-free.
 
 Ideas for alternative solution: Find most closely related alpha node and do LCA. Return LCA nodes child on $l$'s side.
 
