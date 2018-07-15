@@ -1,7 +1,5 @@
 Notes on Algorithms for Massive Data sets and Solutions for Exam Preparation Questions.
 
-[TOC]
-
 ## Notes
 > coming soon
 
@@ -17,16 +15,29 @@ $HFA(l, α)$: return the highest ancestor $a$ of $l$ such that $T(a)$ is $α$-fr
 Give a linear-space data structure for $T$ that supports fast $HFA$ queries. Ignore the preprocessing time.
 
 #### Solution in $O(\log(n))$ time
-No additional changes are made to the original tree. To perform $HFA(\alpha,l)$
 
+> ** This following section needs to be re-written!**
 
-Starting at leaf l, traverse the parents and if all children are \alpha-free continue to the grandparents, otherwise return the leaf. Continue recursively checking greater-grandparents and all greater-grandchildren until the the subtree at some grandparent is no longer \alpha-free.
+No additional changes are made to the original tree. To perform $HFA(\alpha,l)$:
+
+* Start at leaf $l$
+* Examine all siblings
+  * If any siblings have color $\alpha$ return leaf node $l$
+  * Otherwise continue to parents
+* all children are \alpha-free continue to the grandparents
+* visit the grandparents
+
+ otherwise return the leaf. Continue recursively checking greater-grandparents and all greater-grandchildren until the the subtree at some grandparent is no longer \alpha-free.
 
 Ideas for alternative solution: Find most closely related alpha node and do LCA. Return LCA nodes child on $l$'s side.
 
 
 ### Question 3
-### Question 4
+### Question 4 Maximal Supersuffix
+
+Current solution takes factorial sum or $O(n^2)$ time:
+![ex4](ex4.jpg)
+
 ### Question 5
 ### Question 6
 
