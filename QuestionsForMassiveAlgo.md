@@ -9,3 +9,5 @@ The theorem says we can solve the SPIIG in the I/O model in $O(n^2/MB + n/B)$ I/
 
 ##### Slide 22
 The algorithm fills in the quadrant recursively, does that mean the algorithm recursively subdivides the quadrants into smaller sub-quadrants until each sub-quadrant fits into memory?
+
+...And if so how does it know the division fits into memory without knowing the memory and block size?
