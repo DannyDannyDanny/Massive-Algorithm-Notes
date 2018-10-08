@@ -1,8 +1,9 @@
 Notes on Algorithms for Massive Data sets and Solutions for Exam Preparation Questions.
 
-## Things to learn by hand
-* Van Emde Boas trees
-* Y-fast-tries
+## Topics
+* [Hashing](topics/hashing.md)
+* [Van Emde Boas trees](topics/Predecessor.md)
+* [Y-fast-tries](topics/y-fast-tries.md)
 
 ## Solutions
 
